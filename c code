@@ -1,4 +1,4 @@
-//Even or Odd in c
+1.//Even or Odd in c
 #include <stdio.h>
 
 int main() {
@@ -11,6 +11,28 @@ int main() {
     else{
     printf("%d is a Odd",n);
     }
+
+    return 0;
+}
+
+
+2.// First and Last digit
+#include <stdio.h>
+int firstdigit(int n){
+    while(n>=10)
+    {
+        n = n/10;
+    }
+    return n;
+}
+int lastdigit(int n){
+    return n%10;
+}
+int main() {
+    int n;
+    scanf("%d",&n);
+    printf("First digit is %d\n",firstdigit(n));
+    printf("Last digit is %d",lastdigit(n));
 
     return 0;
 }
