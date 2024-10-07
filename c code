@@ -240,7 +240,74 @@ int main() {
 }
 
 //Array concepts:
- 
+1.Find the maximum and minimum element in an array [4,6,2,5,9,7]
+#include<stdio.h>
+int main()
+{
+int n,a[10],max,min;
+scanf("%d",&n);
+for(int i=0;i<n;i++)
+{
+scanf("%d",&a[i]);
+}
+max = a[0];
+min = a[0];
+for(int j=1;j<n;j++)
+{
+if(a[j]>max)
+{
+max = a[j];
+}
+if(a[j]<min)
+{
+min = a[j];
+}
+}
+printf("Maximum = %d\n",max);
+printf("Minimum = %d",min);
+return 0;
+}
+2.//Third largest element in an array.
+#include<stdio.h>
+int main()
+{
+int n,a[10],fmax,smax,tmax;
+for(int i=0;i<n;i++)
+{
+scanf("%d",&a[i]);
+}
+fmax = a[0];
+for(int j=1;j<n;j++)
+{
+if(a[j]>fmax)
+{
+fmax = a[j];
+}
+}
+smax = a[0];
+for(int j=1;j<n;j++)
+{
+if(a[j]>smax && a[j]<fmax)
+{
+smax = a[j];
+}
+}
+tmax = a[0];
+for(int j=1;j<n;j++)
+{
+if(a[j]>tmax && a[j]<fmax && a[j]<smax)
+{
+tmax = a[j];
+}
+}
+printf("First Maximum = %d",fmax);
+printf("Second Maximum = %d",smax);
+printf("Third Maximum = %d",tmax);
+return 0;
+}
+
+
+
 
 
     
