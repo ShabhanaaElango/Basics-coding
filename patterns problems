@@ -599,3 +599,38 @@ int main() {
 
     return 0;
 }
+//Hollow diamond problem(*)
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d",&n);
+    for(int i=1;i<=2*n;i++)
+    {
+        int c;
+        
+        if(n<i)
+        {
+            c = 2*n-i;
+        }
+        else
+        {
+            c = i;
+        }
+        for(int j=1;j<=n-c;j++)
+        {
+            printf(" ");
+        }
+        for(int k=1;k<=c;k++)
+        {
+            if(k==1||k==c)
+                printf("* ");
+            else
+                printf("  ");
+        }
+        
+        printf("\n");
+    }
+
+    return 0;
+}
