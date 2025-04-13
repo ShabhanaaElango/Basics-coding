@@ -538,8 +538,76 @@ subset(n,m,a,b);
 
 return 0;
 }
+10.//If an array is a subset of another array.
+#include<stdio.h>
+int subset(int m,int n,int a[100],int b[100])
+{
+    int count = 0;
+  for(int j=0;j<n;j++){
+      for(int i=0;i<m;i++){
+          if(a[i]==b[j])
+            count+=1;
+      }
+  }
+  if(count==n){
+      printf("2nd array is a subset of 1st array");
+  }
+  else{
+      printf("2nd array is a not a subset of 1st array");
+  }
+  return 0;
+}
+int main(){
+    int m,n,a[100],b[100];
+    scanf("%d",&m);
+    scanf("%d",&n);
+    printf("Enter the elements in 1st array:\n");
+    for(int i=0;i<m;i++){
+        scanf("%d",&a[i]);
+    }
+    printf("Enter the elements in 2nd array:\n");
+    for(int i=0;i<n;i++){
+        scanf("%d",&b[i]);
+    }
+    subset(m,n,a,b);
+    return 0;
+}
+11.//sort all 0s,1s,2s in an array
+#include <stdio.h>
+int sort(int n, int a[100]) {
+    int count = 0, count1 = 0, count2 = 0;
 
+    for (int i = 0; i < n; i++) {
+        if (a[i] == 0)
+            count++;
+        else if (a[i] == 1)
+            count1++;
+        else if (a[i] == 2)
+            count2++;
+    }
 
+    int index = 0;
+    for (int i = 0; i < count; i++)
+        a[index++] = 0;
+    for (int i = 0; i < count1; i++)
+        a[index++] = 1;
+    for (int i = 0; i < count2; i++)
+        a[index++] = 2;
+    return 0;
+}
+
+int main() {
+    int n, a[100];
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    }
+    sort(n, a);
+    for (int i = 0; i < n; i++) {
+        printf("%d ", a[i]);
+    }
+    return 0;
+}
 
 
 
