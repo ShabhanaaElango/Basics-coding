@@ -727,6 +727,31 @@ int main() {
     return 0;
 }
 
+
+
+Recursion Concepts:
+1.//Print N natural numbers using recursion
+#include <stdio.h>
+void print(int n) {
+    if (n != 0){
+        print(n - 1);    
+        printf("%d ", n);
+        }
+    else{
+        return 0;
+}
+}
+int main() {
+    int n;
+    scanf("%d", &n);
+    print(n);
+    return 0;
+}
+
+
+
+
+
     
 
 
