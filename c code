@@ -612,7 +612,120 @@ int main() {
 
 
 
+//3.Union of two arrays
+#include <stdio.h>
 
+int arr_union(int m, int n, int a[100], int b[100]) {
+    int result[200];  // Increased size for safety
+    int index = 0;
+
+    // Insert elements of a[] into result[] if not already present
+    for (int i = 0; i < m; i++) {
+        int found = 0;
+        for (int j = 0; j < index; j++) {
+            if (a[i] == result[j]) {
+                found = 1;
+                break;
+            }
+        }
+        if (!found) {
+            result[index++] = a[i];
+        }
+    }
+
+    // Insert elements of b[] into result[] if not already present
+    for (int i = 0; i < n; i++) {
+        int found = 0;
+        for (int j = 0; j < index; j++) {
+            if (b[i] == result[j]) {
+                found = 1;
+                break;
+            }
+        }
+        if (!found) {
+            result[index++] = b[i];
+        }
+    }
+
+    // Print the result
+    for (int i = 0; i < index; i++) {
+        printf("%d ", result[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+int main() {
+    int m, n, a[100], b[100];
+    
+    scanf("%d", &m);
+    for (int i = 0; i < m; i++) {
+        scanf("%d", &a[i]);
+    }
+
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &b[i]);
+    }
+
+    arr_union(m, n, a, b);
+    return 0;
+}
+
+4.// Intersection of two arrays
+
+#include <stdio.h>
+
+void inter(int m, int n, int a[100], int b[100]) {
+    int result[100];
+    int index = 0;
+
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            if (a[i] == b[j]) {
+                int f = 0;
+                for (int k = 0; k < index; k++) {
+                    if (a[i] == result[k]) {
+                        f = 1;
+                        break;
+                    }
+                }
+                if (f == 0) {
+                    result[index++] = a[i];
+                }
+            }
+        }
+    }
+
+    printf("Intersection of the arrays: ");
+    for (int i = 0; i < index; i++) {
+        printf("%d ", result[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    int m, n, a[100], b[100];
+
+    printf("Enter number of elements in 1st array: ");
+    scanf("%d", &m);
+    printf("Enter the elements of 1st array:\n");
+    for (int i = 0; i < m; i++) {
+        scanf("%d", &a[i]);
+    }
+
+    printf("Enter number of elements in 2nd array: ");
+    scanf("%d", &n);
+    printf("Enter the elements of 2nd array:\n");
+    for (int j = 0; j < n; j++) {
+        scanf("%d", &b[j]);
+    }
+
+    inter(m, n, a, b);
+
+    return 0;
+}
 
     
 
