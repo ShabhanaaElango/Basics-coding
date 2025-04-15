@@ -708,3 +708,22 @@ int main() {
 
     return 0;
 }
+//Pascal's Triangle
+#include<stdio.h>
+int main(){
+    int rows,cf=1;
+    scanf("%d",&rows);
+    for(int i=0;i<rows;i++){
+        for(int j=1;j<=rows-i;j++){
+            printf(" ");
+        }
+        for(int k=0;k<=i;k++){
+            if((i==0)||(k==0))
+                cf=1;
+            else
+                cf =cf*(i-k+1)/k;
+        printf("%d ",cf);
+        }
+        printf("\n");
+    }
+}
