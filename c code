@@ -858,6 +858,33 @@ int main(){
     rotate(a,m,n);
         
     }
+3.//Find the row which has maximum 1's.
+#include<stdio.h>
+int main(){
+    int m,n,index,a[100][100];
+    scanf("%d",&m);
+    scanf("%d",&n);
+    int maxcount=0;
+    for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+            scanf("%d",&a[i][j]);
+        }
+        printf("\n");
+    }
+    for(int i=0;i<m;i++){
+         int count =0;
+        for(int j=0;j<n;j++){
+            if(a[i][j]==1){
+                count++;
+            }
+        }
+        if(count>maxcount){
+            maxcount=count;
+            index=i+1;
+        }     
+    }
+    printf("The row which has maximum 1's is: %d",index);
+}
 
 
 
